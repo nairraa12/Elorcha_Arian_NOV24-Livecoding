@@ -1,0 +1,45 @@
+package labgrade;
+
+/**
+ *
+ * @author ELORCHA_CPE113
+ */
+public class Main_labgrade {
+
+    public static void main(String[] args) {
+
+        // Create two independent objects
+        LabGrade ana = new LabGrade("Ana", 80, 90);
+        LabGrade ben = new LabGrade("Ben", 101, 85);
+
+        // Test 1: Create Ana's record
+        System.out.println("Ana: " + ana.getFinalGrade() + "; " + (ana.isPassing() ? "passing" : "not passing"));
+
+        // Test 2: Create Ben's record
+        System.out.println("Ben: " + ben.getFinalGrade() + "; " + (ben.isPassing() ? "passing" : "not passing"));
+        
+        // Test 3: Update Ana's scores to 95 and 101
+        boolean update1 = ana.updateScores(95, 101);
+
+        System.out.println(update1 + "; grade stays " + ana.getFinalGrade());
+
+        // Test 4: Update Ana's scores to 74 and 75
+        boolean update2 = ana.updateScores(74, 75);
+
+        System.out.println(update2 + "; " + ana.getFinalGrade() + "; " + (ana.isPassing() ? "passing" : "not passing"));
+
+        // Test 5: Update Ana's scores to 75 and 75
+        boolean update3 = ana.updateScores(75, 75);
+
+        System.out.println(update3 + "; " + ana.getFinalGrade() + "; " + (ana.isPassing() ? "passing" : "not passing"));
+
+        // Test 6: Check Ben's record again
+        System.out.println("Ben: " + ben.getFinalGrade() + "; " + (ben.isPassing() ? "passing" : "not passing"));
+        
+        
+        /*ACTIVITY 2, Question 1: Why must you validate both new scores before assigning either one?
+        /* Both scores must be validated before assigning either one. This prevents an invalid score from causing only one of the two scores to be updated. */
+        
+    }
+
+}
